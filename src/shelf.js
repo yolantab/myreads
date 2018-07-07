@@ -1,11 +1,11 @@
 import React from 'react';
 import './App.css'
-
+//single shelf
 class Shelf extends React.Component {
 
     render() {
 
-        const { shelf, books } = this.props
+        const { shelf, books } = this.props;
          return (
             <div className="bookshelf">
                 <h2 className="bookshelf-title">{shelf}</h2>

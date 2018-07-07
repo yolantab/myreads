@@ -1,8 +1,8 @@
 import React from 'react';
-import * as BooksAPI from './BooksAPI'
-import './App.css'
+import * as BooksAPI from './BooksAPI';
+import './App.css';
 import { Link } from 'react-router-dom';
-import Book from './book.js'
+import Book from './book.js';
 
 class Search extends React.Component {
     state = {
@@ -10,10 +10,12 @@ class Search extends React.Component {
         query: ''
     }
    
+
     onInputChange = query => {
         this.updateQuery(query)
         query !== '' ? (this.findbook(query)) : (console.log("empty"))
     }
+
     updateQuery = (query) => {
         this.setState(() => ({
             query: query
@@ -21,6 +23,7 @@ class Search extends React.Component {
         }))
     }
 
+    //search BooksApi for more books
     findbook = query => {
         if (query) {
             BooksAPI.search(query, 10).then((books) => {
@@ -35,11 +38,13 @@ class Search extends React.Component {
         }
     }
 
+    // update shelf 
      changeShelf(book, shelf) {
         BooksAPI.update(book, shelf)
 
-}
+    }
 
+    // show search result
     showBooks() {
 
         const { books, query } = this.state;
@@ -48,6 +53,7 @@ class Search extends React.Component {
             return books.error ?
                 <div>Nothing found</div>
                 : books.map((book, index) => {
+                    // if there is no image set default placeholder
                     const image = book.imageLinks ? book.imageLinks.thumbnail : 'http://via.placeholder.com/128x193'
                     return (
                         <Book

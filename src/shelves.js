@@ -1,9 +1,9 @@
 import React from 'react';
-import * as BooksAPI from './BooksAPI'
-import './App.css'
+import * as BooksAPI from './BooksAPI';
+import './App.css';
 import { Link } from 'react-router-dom';
-import Book from './book.js'
-import Shelf from './shelf'
+import Book from './book.js';
+import Shelf from './shelf';
 
 class Shelves extends React.Component {
 
@@ -16,7 +16,8 @@ class Shelves extends React.Component {
 
        this.getbooks();
         }
-  
+
+  // get all books that are one shelves
     getbooks(){
         BooksAPI.getAll().then((books) => {
             // add books to state
@@ -26,8 +27,10 @@ class Shelves extends React.Component {
 
 
    changeShelf(book, shelf){
+       // uptade booksapi when shelf is changed
         BooksAPI.update(book, shelf).then(() => this.getbooks());
     }
+
 
     render() {
         const allbooks = this.state.books
@@ -46,6 +49,7 @@ class Shelves extends React.Component {
                     <h1>MyReads</h1>
                 </div>
                 <div className="list-books-content">
+                {/* filter books and place them on the shelves if shelf's name fits */}
                     <Shelf shelf="Currently Reading" books={books.filter(book => (book.props.shelf === "currentlyReading"))} />
                     <Shelf shelf="Want to Read" books={books.filter(book => (book.props.shelf === "wantToRead"))} />
                     <Shelf shelf="Read" books={books.filter(book => (book.props.shelf === "read"))} />

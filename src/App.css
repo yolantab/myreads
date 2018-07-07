@@ -5,15 +5,17 @@ body {
   line-height: 1.5;
 }
 body, .app {
-  background: white;
+  background: rgb(247, 252, 253);
 }
 
 /* main page */
 
 .list-books-title {
+  font-family: 'Indie Flower', cursive;
   padding: 10px 0;
-  background: #2e7c31;
+  background: #1c7ec0;
   text-align: center;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 0 6px rgba(0, 0, 0, 0.23);
 }
 .list-books-title h1 {
   font-weight: 400;
@@ -37,7 +39,9 @@ body, .app {
 }
 
 .bookshelf-title {
+  font-family: 'Indie Flower', cursive;
   border-bottom: 1px solid #dedede;
+  text-align: center;
 }
 .bookshelf-books {
   text-align: center;
@@ -53,7 +57,7 @@ body, .app {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: #2e7d32;
+  background: #1c7ec0;
   background-image: url('./icons/add.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -147,7 +151,7 @@ body, .app {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: #60ac5d;
+  background: #1c7ec0;
   background-image: url('./icons/arrow-drop-down.svg');
   background-repeat: no-repeat;
   background-position: center;
@@ -164,7 +168,8 @@ body, .app {
 /* book cover */
 
 .book-cover {
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  /* box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23); */
+  box-shadow: 5px 5px 10px 0 rgba(0, 0, 0, 0.212), 5px 5px 0 -2.5px rgb(82, 81, 81),10px 10px 0 -5px #555, 15px 15px 0 -7.5px #AAA, 20px 20px 0 -10px #EEE;
   background: #eee;
 }
 .book-cover-title {
